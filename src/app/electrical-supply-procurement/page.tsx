@@ -65,8 +65,8 @@ export default function SupplyProcurementPage() {
       <section className="bg-bp-surface py-20">
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <BrandedPhoto
-            src={images.warehouse}
-            alt="Warehouse logistics for electrical procurement"
+            src={images.industrial}
+            alt="Industrial supply chain for electrical procurement"
             overlay="soft"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />

@@ -31,7 +31,7 @@ export function Button({
   type?: "button" | "submit";
 }) {
   const base =
-    "inline-flex min-h-12 items-center justify-center gap-2 rounded-lg px-7 py-3 text-sm font-semibold tracking-wide transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bp-sky disabled:pointer-events-none disabled:opacity-60";
+    "inline-flex min-h-12 items-center justify-center gap-2 rounded-sm px-7 py-3 text-sm font-semibold tracking-wide transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bp-sky disabled:pointer-events-none disabled:opacity-60";
 
   const classes = `${base} ${variants[variant]} ${className}`;
 

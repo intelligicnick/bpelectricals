@@ -12,7 +12,7 @@
 
 ## Photography
 
-Current placeholders: Unsplash URLs in `src/lib/images.ts`.
+Decorative sections use curated stock files from `public/images/stock/` via `src/lib/images.ts` (see `IMAGE_SOURCES.md` for licences). Verified project photography remains in `public/images/portfolio/` for portfolio cards only.
 
 Before production:
 

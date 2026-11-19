@@ -95,8 +95,8 @@ export default function ElectricalContractingPage() {
       <CtaBand
         title="Combine contracting with material supply"
         description="Many clients engage us for both procurement and execution under aligned commercial structures."
-        image={images.construction}
-        imageAlt="Construction and electrical infrastructure"
+        image={images.powerPlant}
+        imageAlt="Power infrastructure and electrical contracting"
       />
     </>
   );

@@ -65,8 +65,12 @@ h6 {
   }
 }
 
+.hero-text-shadow {
+  text-shadow: 0 2px 24px rgb(15 26 36 / 0.55);
+}
+
 .card-surface {
-  border-radius: 0.75rem;
+  border-radius: 0.125rem;
   border: 1px solid var(--bp-border);
   background: white;
   box-shadow: 0 1px 2px rgb(26 43 60 / 0.04);

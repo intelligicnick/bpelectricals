@@ -1,22 +1,19 @@
-/** Verified remote URLs (Unsplash / Pexels) — electrical & B2B imagery. */
+/** Decorative photography (royalty-free). Project cards keep verified portfolio files. */
 
-const unsplash = (id: string, w = 1600) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
-
-const pexels = (id: number, w = 1600) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+const stock = (file: string) => `/images/stock/${file}`;
 
 export const images = {
-  heroGrid: pexels(1216589, 2000),
-  transmissionLines: pexels(236989, 2000),
-  substation: unsplash("1716784592039-4c81b8d1db15"),
-  switchgear: unsplash("1581092160562-40aa08e78837"),
-  distributionBoard: pexels(159201),
-  cables: unsplash("1621905251189-08b45d6a269e"),
-  industrial: pexels(1148820),
-  construction: unsplash("1503387762-592deb58ef4e"),
-  controlRoom: unsplash("1497366216548-37526070297c"),
-  warehouse: unsplash("1586528116311-ad8dd3c8310d"),
-  teamWork: pexels(2219024),
-  powerPlant: pexels(236989),
+  /** Homepage & key heroes — transmission / grid infrastructure */
+  transmissionLines: stock("transmission-lines.jpg"),
+  heroGrid: stock("hero-grid.jpg"),
+  substation: stock("substation.jpg"),
+  switchgear: stock("switchgear.jpg"),
+  distributionBoard: stock("distribution-board.jpg"),
+  cables: stock("cables.jpg"),
+  industrial: stock("industrial.jpg"),
+  construction: stock("construction.jpg"),
+  controlRoom: stock("control-room.jpg"),
+  warehouse: stock("warehouse.jpg"),
+  teamWork: stock("team-work.jpg"),
+  powerPlant: stock("power-plant.jpg"),
 } as const;

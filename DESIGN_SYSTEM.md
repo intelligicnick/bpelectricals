@@ -47,4 +47,4 @@ Hierarchy:
 
 ## Photography
 
-Curated Unsplash URLs in `src/lib/images.ts`. Replace with owned or licensed assets per `ASSET_GUIDELINES.md`.
+Decorative photography in `src/lib/images.ts` (`public/images/stock/`). Verified project shots stay in `public/images/portfolio/`. See `ASSET_GUIDELINES.md` and `public/images/stock/IMAGE_SOURCES.md`.

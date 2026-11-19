@@ -58,7 +58,7 @@ export function PageHero({
           )}
           <h1
             className={`text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-[3.25rem] ${
-              onDark ? "text-white" : "text-bp-navy"
+              onDark ? "hero-text-shadow text-white" : "text-bp-navy"
             }`}
           >
             {title}

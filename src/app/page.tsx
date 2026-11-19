@@ -18,7 +18,7 @@ export default function HomePage() {
       <section className="relative min-h-[85vh] overflow-hidden bg-bp-navy-deep text-white">
         <HeroBackground
           src={images.transmissionLines}
-          alt="High-voltage transmission lines and electrical grid"
+          alt="BP Electrical project portfolio — electrical works in India"
           priority
         />
         <Container className="relative z-10 flex min-h-[85vh] flex-col justify-center py-20">
@@ -26,7 +26,7 @@ export default function HomePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-bp-sky">
               {site.legalName}
             </p>
-            <h1 className="mt-5 text-[2.75rem] font-bold leading-[1.05] sm:text-6xl lg:text-[4.25rem]">
+            <h1 className="hero-text-shadow mt-5 text-[2.75rem] font-bold leading-[1.05] sm:text-6xl lg:text-[4.25rem]">
               Electrical products &amp; works for{" "}
               <span className="text-bp-sky">corporate India</span>
             </h1>
@@ -68,7 +68,7 @@ export default function HomePage() {
           <Reveal delay={120} className="space-y-8 lg:col-span-6 lg:col-start-7">
             <BrandedPhoto
               src={images.substation}
-              alt="Electrical substation and power distribution"
+              alt="Distribution substation (DSS) electrical works — Maharashtra"
               overlay="editorial"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
@@ -93,7 +93,7 @@ export default function HomePage() {
         <Container className="mb-12">
           <BrandedPhoto
             src={images.controlRoom}
-            alt="Electrical monitoring and corporate operations"
+            alt="On-site electrical execution for utility-linked programmes in Mumbai"
             overlay="soft"
             aspectClassName="aspect-[21/9] max-h-[320px]"
             sizes="100vw"
@@ -243,7 +243,7 @@ export default function HomePage() {
 
       <CtaBand
         image={images.cables}
-        imageAlt="Electrical cabling and infrastructure"
+        imageAlt="Electrical cabling and infrastructure works on active project sites in India"
       />
     </>
   );

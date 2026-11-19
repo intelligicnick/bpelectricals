@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { ProjectPlaceholder } from "@/components/sections/ProjectPlaceholder";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { images } from "@/lib/images";
 import { portfolioProjects } from "@/lib/portfolio";
 import { site } from "@/lib/site";
 
@@ -20,8 +21,8 @@ export default function ProjectsPage() {
         eyebrow="Portfolio"
         title="Projects & work experience"
         description="Selected engagements from our company profile — utility DSS works, commercial campuses, hospitality, customer service centres, and quality support programmes."
-        image="/images/portfolio/page1-img1.png"
-        imageAlt="BP Electrical project portfolio"
+        image={images.transmissionLines}
+        imageAlt="High-voltage transmission and distribution infrastructure"
         align="left"
       />
 
@@ -50,8 +51,8 @@ export default function ProjectsPage() {
       <CtaBand
         title="Discuss similar scope"
         description="Share tender documents, drawings or a scope note and we will respond with capability and availability."
-        image="/images/portfolio/page3-img1.png"
-        imageAlt="Electrical infrastructure works"
+        image={images.substation}
+        imageAlt="Electrical substation and distribution infrastructure"
       />
     </>
   );

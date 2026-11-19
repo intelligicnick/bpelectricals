@@ -19,6 +19,7 @@ type Props = {
   overlay?: BrandedOverlay;
   fill?: boolean;
   aspectClassName?: string;
+  objectPosition?: string;
   /** Show project / document photos without brand treatment */
   native?: boolean;
 };
@@ -33,11 +34,12 @@ export function BrandedPhoto({
   overlay = "editorial",
   fill = true,
   aspectClassName = "aspect-[4/3]",
+  objectPosition = "center",
   native = false,
 }: Props) {
   return (
     <div
-      className={`relative overflow-hidden rounded-xl bg-bp-navy-deep ${aspectClassName} ${className}`}
+      className={`relative overflow-hidden rounded-sm bg-bp-navy-deep ${aspectClassName} ${className}`}
     >
       <Image
         src={src}
@@ -45,10 +47,11 @@ export function BrandedPhoto({
         fill={fill}
         sizes={sizes}
         priority={priority}
+        style={{ objectPosition }}
         className={`object-cover ${
           native
             ? ""
-            : "saturate-[0.92] contrast-[1.05] brightness-[0.94]"
+            : "saturate-[0.95] contrast-[1.04] brightness-[0.96]"
         } ${imageClassName}`}
       />
       {!native && (
