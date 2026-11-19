@@ -4,6 +4,8 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { ContactDetails } from "@/components/contact/ContactDetails";
+import { BrandedPhoto } from "@/components/media/BrandedPhoto";
+import { images } from "@/lib/images";
 import { site } from "@/lib/site";
 
 export const metadata = createPageMetadata({
@@ -19,6 +21,8 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Business enquiries"
         description="Reach our team for product quotations, procurement discussions, or contracting scope. Consumer retail enquiries are not serviced through this channel."
+        image={images.controlRoom}
+        imageAlt="Business and electrical operations environment"
         align="left"
       />
 
@@ -33,7 +37,7 @@ export default function ContactPage() {
               <ContactDetails />
             </div>
           </div>
-          <div className="lg:col-span-6 lg:col-start-7 rounded-sm border border-bp-border bg-bp-surface p-8 lg:p-10">
+          <div className="card-surface lg:col-span-6 lg:col-start-7 p-8 lg:p-10">
             <h2 className="text-xl font-bold text-bp-navy">Enquiry form</h2>
             <p className="mt-2 text-sm text-bp-muted">
               Required fields are marked. Submissions are logged server-side;
@@ -41,6 +45,18 @@ export default function ContactPage() {
             </p>
             <EnquiryForm className="mt-8" />
           </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-bp-border bg-bp-surface py-16 lg:py-20">
+        <Container>
+          <BrandedPhoto
+            src={images.substation}
+            alt="Electrical substation and distribution infrastructure"
+            overlay="soft"
+            aspectClassName="aspect-[21/9] max-h-[420px]"
+            sizes="100vw"
+          />
         </Container>
       </section>
     </>

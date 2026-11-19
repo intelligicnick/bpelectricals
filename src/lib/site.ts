@@ -12,10 +12,12 @@ export const site = {
   phone: process.env.NEXT_PUBLIC_PHONE?.trim() || null,
   email: process.env.NEXT_PUBLIC_EMAIL?.trim() || null,
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP?.trim() || null,
-  address: process.env.NEXT_PUBLIC_ADDRESS?.trim() || null,
+  address:
+    process.env.NEXT_PUBLIC_ADDRESS?.trim() ||
+    "5th Vihan Commercial Complex, Walbhat Road, Opp Nutun Chemical Compound, Goregaon East, Mumbai, Maharashtra 400063",
 } as const;
 
 export const utilityPartners = [
-  "Adani Electricity",
+  "Adani Electricity Mumbai Ltd",
   "Tata Power",
 ] as const;

@@ -52,7 +52,7 @@ export function EnquiryForm({ subject = "General enquiry", className = "" }: Pro
   }
 
   const inputClass =
-    "w-full rounded-sm border border-bp-border bg-white px-4 py-3 text-sm text-bp-charcoal placeholder:text-bp-muted/70 focus:border-bp-sky focus:outline-none focus:ring-2 focus:ring-bp-sky/20";
+    "w-full rounded-lg border border-bp-border bg-white px-4 py-3 text-sm text-bp-charcoal shadow-sm placeholder:text-bp-muted focus:border-bp-sky focus:outline-none focus:ring-2 focus:ring-bp-sky/25";
 
   return (
     <form
@@ -137,7 +137,7 @@ export function EnquiryForm({ subject = "General enquiry", className = "" }: Pro
         variant="primary"
         className="w-full sm:w-auto"
       >
-        {status === "loading" ? "Sending…" : "Submit enquiry"}
+        {status === "loading" ? "Sending…" : "Send Enquiry"}
       </Button>
     </form>
   );

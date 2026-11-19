@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrandedPhoto } from "@/components/media/BrandedPhoto";
+import { HeroBackground } from "@/components/media/HeroBackground";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -8,21 +9,18 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { ProjectPlaceholder } from "@/components/sections/ProjectPlaceholder";
 import { images } from "@/lib/images";
+import { portfolioProjects } from "@/lib/portfolio";
 import { site, utilityPartners } from "@/lib/site";
 
 export default function HomePage() {
   return (
     <>
       <section className="relative min-h-[85vh] overflow-hidden bg-bp-navy-deep text-white">
-        <Image
-          src={images.heroGrid}
-          alt="Electrical transmission infrastructure at dusk"
-          fill
-          className="object-cover opacity-45"
+        <HeroBackground
+          src={images.transmissionLines}
+          alt="High-voltage transmission lines and electrical grid"
           priority
-          sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-bp-navy-deep via-bp-navy-deep/90 to-bp-navy/40" />
         <Container className="relative z-10 flex min-h-[85vh] flex-col justify-center py-20">
           <div className="max-w-3xl animate-fade-up">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-bp-sky">
@@ -38,9 +36,9 @@ export default function HomePage() {
               components to B2B procurement and complete contracting scope.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button href="/contact">Business enquiry</Button>
-              <Button href="/products" variant="outline" className="border-white/25 !text-white hover:!bg-white/10">
-                Product catalogue
+              <Button href="/contact">Request a Quote</Button>
+              <Button href="/products" variant="inverse">
+                Explore Products
               </Button>
             </div>
           </div>
@@ -58,8 +56,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-20 lg:py-28">
-        <Container className="grid gap-14 lg:grid-cols-12 lg:items-center">
+      <section className="section-pad">
+        <Container className="grid items-center gap-14 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
             <SectionHeading
               eyebrow="Introduction"
@@ -67,7 +65,13 @@ export default function HomePage() {
               description="We support utilities, contractors and corporate facilities with material supply and execution capability — aligned to the standards expected by large power and infrastructure organisations."
             />
           </Reveal>
-          <Reveal delay={120} className="lg:col-span-6 lg:col-start-7">
+          <Reveal delay={120} className="space-y-8 lg:col-span-6 lg:col-start-7">
+            <BrandedPhoto
+              src={images.substation}
+              alt="Electrical substation and power distribution"
+              overlay="editorial"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
             <div className="space-y-5 text-bp-muted leading-relaxed">
               <p>
                 {site.name} operates as the customer-facing brand of{" "}
@@ -86,6 +90,15 @@ export default function HomePage() {
       </section>
 
       <section className="border-y border-bp-border bg-bp-surface py-16">
+        <Container className="mb-12">
+          <BrandedPhoto
+            src={images.controlRoom}
+            alt="Electrical monitoring and corporate operations"
+            overlay="soft"
+            aspectClassName="aspect-[21/9] max-h-[320px]"
+            sizes="100vw"
+          />
+        </Container>
         <Container>
           <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-bp-muted">
             Ecosystem associations
@@ -99,13 +112,21 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-20 lg:py-28">
+      <section className="section-pad">
         <Container>
-          <SectionHeading
-            eyebrow="Products"
-            title="Categories built for utility and industry"
-            description="Source distribution gear, protection, cabling and industrial electrical lines through a single B2B conversation."
-          />
+          <div className="grid items-end gap-10 lg:grid-cols-2 lg:gap-12">
+            <SectionHeading
+              eyebrow="Products"
+              title="Categories built for utility and industry"
+              description="Source distribution gear, protection, cabling and industrial electrical lines through a single B2B conversation."
+            />
+            <BrandedPhoto
+              src={images.distributionBoard}
+              alt="Electrical distribution panels and switchgear"
+              overlay="editorial"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
               index={0}
@@ -129,7 +150,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-bp-navy py-20 text-white lg:py-28">
+      <section className="section-pad bg-bp-navy text-white">
         <Container className="grid gap-12 lg:grid-cols-2">
           <Reveal>
             <SectionHeading
@@ -158,62 +179,72 @@ export default function HomePage() {
             </ul>
           </Reveal>
           <Reveal delay={100}>
-            <div className="relative aspect-[5/4] overflow-hidden">
-              <Image
-                src={images.teamWork}
-                alt="Industrial electrical installation environment"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+            <BrandedPhoto
+              src={images.teamWork}
+              alt="Industrial electrical installation environment"
+              overlay="editorial"
+              aspectClassName="aspect-[5/4]"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </Reveal>
         </Container>
       </section>
 
-      <section className="py-20 lg:py-28">
-        <Container>
-          <SectionHeading
-            eyebrow="Industries"
-            title="Sectors we support"
-            description="Power utilities, commercial infrastructure, industrial plants, construction, real estate and institutional facilities."
-          />
-          <div className="mt-10">
-            <Button href="/industries" variant="secondary">
-              Industries we serve
-            </Button>
+      <section className="section-pad">
+        <Container className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <SectionHeading
+              eyebrow="Industries"
+              title="Sectors we support"
+              description="Power utilities, commercial infrastructure, industrial plants, construction, real estate and institutional facilities."
+            />
+            <div className="mt-10">
+              <Button href="/industries" variant="primary">
+                View Industries
+              </Button>
+            </div>
           </div>
+          <BrandedPhoto
+            src={images.construction}
+            alt="Infrastructure and construction sectors"
+            overlay="soft"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
         </Container>
       </section>
 
-      <section className="bg-bp-surface py-20 lg:py-28">
+      <section className="section-pad bg-bp-surface">
         <Container>
           <SectionHeading
             eyebrow="Projects"
             title="Work experience"
-            description="Verified project case studies and photography will be published here. Until then, placeholders indicate where portfolio content will appear."
+            description="Recent electrical contracting and execution engagements across utility, commercial, hospitality and infrastructure programmes."
           />
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
-            <ProjectPlaceholder
-              index={0}
-              title="Utility &amp; distribution programme"
-              note="Awaiting client-approved project name, scope summary and photography."
-            />
-            <ProjectPlaceholder
-              index={1}
-              title="Industrial electrical installation"
-              note="Awaiting client-approved project name, scope summary and photography."
-            />
+            {portfolioProjects.slice(0, 4).map((p, i) => (
+              <ProjectPlaceholder
+                key={p.title}
+                index={i}
+                title={p.title}
+                note={p.note}
+                image={p.image}
+                imageAlt={p.imageAlt}
+                verified
+              />
+            ))}
           </div>
           <div className="mt-10">
             <Button href="/projects" variant="outline">
-              Projects &amp; work experience
+              View All Projects
             </Button>
           </div>
         </Container>
       </section>
 
-      <CtaBand />
+      <CtaBand
+        image={images.cables}
+        imageAlt="Electrical cabling and infrastructure"
+      />
     </>
   );
 }

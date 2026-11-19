@@ -4,33 +4,14 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { ProjectPlaceholder } from "@/components/sections/ProjectPlaceholder";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { images } from "@/lib/images";
+import { portfolioProjects } from "@/lib/portfolio";
 import { site } from "@/lib/site";
 
 export const metadata = createPageMetadata({
   title: "Projects & Work Experience",
-  description: `Project portfolio and work experience from ${site.name}. Verified case studies published when approved.`,
+  description: `Electrical contracting and execution projects delivered by ${site.name} across Mumbai and western Maharashtra.`,
   path: "/projects",
 });
-
-const placeholders = [
-  {
-    title: "Utility distribution upgrade",
-    note: "Placeholder for a utility-linked distribution project. Replace with verified client name, scope, location and photography.",
-  },
-  {
-    title: "Commercial infrastructure electrical works",
-    note: "Placeholder for a commercial campus or tower electrical scope. Awaiting approved public case study content.",
-  },
-  {
-    title: "Industrial plant electrical package",
-    note: "Placeholder for industrial MCC / power distribution engagement. Photography must be client-approved before publication.",
-  },
-  {
-    title: "Corporate procurement programme",
-    note: "Placeholder for long-term material supply relationship. Statistics and logos require written client consent.",
-  },
-];
 
 export default function ProjectsPage() {
   return (
@@ -38,25 +19,28 @@ export default function ProjectsPage() {
       <PageHero
         eyebrow="Portfolio"
         title="Projects & work experience"
-        description="We publish only verified projects with approved descriptions and photography. The cards below are clearly marked placeholders until your team supplies real portfolio content."
-        image={images.teamWork}
-        imageAlt="Electrical works on an industrial site"
+        description="Selected engagements from our company profile — utility DSS works, commercial campuses, hospitality, customer service centres, and quality support programmes."
+        image="/images/portfolio/page1-img1.png"
+        imageAlt="BP Electrical project portfolio"
         align="left"
       />
 
       <section className="py-20">
         <Container>
           <SectionHeading
-            title="Portfolio status"
-            description="No fabricated project names, client logos or completion statistics appear on this website. When you share approved assets, we replace placeholders one-to-one."
+            title="Published work"
+            description="Photography and project names are taken from the approved company profile. Detailed scope summaries are available on enquiry."
           />
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
-            {placeholders.map((p, i) => (
+            {portfolioProjects.map((p, i) => (
               <ProjectPlaceholder
                 key={p.title}
                 index={i}
                 title={p.title}
                 note={p.note}
+                image={p.image}
+                imageAlt={p.imageAlt}
+                verified
               />
             ))}
           </div>
@@ -64,8 +48,10 @@ export default function ProjectsPage() {
       </section>
 
       <CtaBand
-        title="Share approved portfolio material"
-        description="Contact us with photography, scope summaries and publication approvals. We will update this page accordingly."
+        title="Discuss similar scope"
+        description="Share tender documents, drawings or a scope note and we will respond with capability and availability."
+        image="/images/portfolio/page3-img1.png"
+        imageAlt="Electrical infrastructure works"
       />
     </>
   );

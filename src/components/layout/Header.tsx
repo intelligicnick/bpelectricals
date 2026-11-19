@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "@/components/ui/Logo";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { mainNav, type NavEntry } from "@/lib/navigation";
-import { site } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
@@ -90,10 +89,6 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
@@ -101,17 +96,10 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-bp-border/80 bg-white/95 backdrop-blur-md">
-      <Container className="flex h-[4.5rem] items-center justify-between gap-6 lg:h-20">
+    <header className="sticky top-0 z-50 border-b border-bp-border/80 bg-white/95 shadow-sm shadow-bp-navy/5 backdrop-blur-md">
+      <Container className="flex min-h-[5rem] items-center justify-between gap-4 py-2 sm:min-h-[5.5rem] lg:min-h-[6.25rem] lg:gap-6">
         <Link href="/" className="relative flex shrink-0 items-center">
-          <Image
-            src={site.logoPath}
-            alt={site.legalName}
-            width={200}
-            height={56}
-            className="h-10 w-auto sm:h-11"
-            priority
-          />
+          <Logo variant="header" priority />
         </Link>
 
         <nav
@@ -137,14 +125,12 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="/contact" variant="secondary">
-            Business Enquiry
-          </Button>
+          <Button href="/contact">Request a Quote</Button>
         </div>
 
         <button
           type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-sm border border-bp-border lg:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-lg border border-bp-border lg:hidden"
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           onClick={() => setMobileOpen((o) => !o)}
@@ -178,6 +164,7 @@ export function Header() {
                 <Link
                   key={entry.href}
                   href={entry.href}
+                  onClick={() => setMobileOpen(false)}
                   className="block py-3 text-base font-medium text-bp-navy"
                 >
                   {entry.label}
@@ -191,6 +178,7 @@ export function Header() {
                     <Link
                       key={sub.href}
                       href={sub.href}
+                      onClick={() => setMobileOpen(false)}
                       className="block py-2 pl-3 text-sm text-bp-charcoal"
                     >
                       {sub.label}
@@ -200,8 +188,8 @@ export function Header() {
               ),
             )}
             <div className="pt-4">
-              <Button href="/contact" variant="secondary" className="w-full">
-                Business Enquiry
+              <Button href="/contact" className="w-full">
+                Request a Quote
               </Button>
             </div>
           </Container>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { BrandedPhoto } from "@/components/media/BrandedPhoto";
 import { createPageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -45,6 +45,15 @@ export default function DistributionEquipmentPage() {
       />
 
       <section className="py-20">
+        <Container className="mb-12">
+          <BrandedPhoto
+            src={images.switchgear}
+            alt="Switchgear and distribution equipment"
+            overlay="soft"
+            aspectClassName="aspect-[21/9] max-h-[340px]"
+            sizes="100vw"
+          />
+        </Container>
         <Container>
           <SectionHeading
             title="Product focus areas"
@@ -74,15 +83,12 @@ export default function DistributionEquipmentPage() {
 
       <section className="bg-bp-surface py-20">
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-start">
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <Image
-              src={images.cables}
-              alt="Electrical cabling and distribution materials"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          <BrandedPhoto
+            src={images.cables}
+            alt="Electrical cabling and distribution materials"
+            overlay="editorial"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
           <div className="border border-bp-border bg-white p-8 lg:p-10">
             <SectionHeading
               eyebrow="Enquiry"

@@ -16,7 +16,7 @@ export function FeatureCard({
     <Reveal delay={index * 80}>
       <Link
         href={href}
-        className="group block border border-bp-border bg-white p-8 transition-all duration-300 hover:border-bp-sky hover:shadow-lg hover:shadow-bp-navy/5"
+        className="card-surface group block p-8 transition-all duration-300 hover:border-bp-sky hover:shadow-lg hover:shadow-bp-sky/10"
       >
         <h3 className="text-xl font-bold text-bp-navy group-hover:text-bp-sky">
           {title}

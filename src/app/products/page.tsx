@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { BrandedPhoto } from "@/components/media/BrandedPhoto";
 import { createPageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -66,6 +66,15 @@ export default function ProductsPage() {
       </section>
 
       <section className="bg-bp-surface py-20">
+        <Container className="mb-12">
+          <BrandedPhoto
+            src={images.cables}
+            alt="Electrical cables and product supply lines"
+            overlay="contrast"
+            aspectClassName="aspect-[21/9] max-h-[360px]"
+            sizes="100vw"
+          />
+        </Container>
         <Container className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <SectionHeading
@@ -95,15 +104,12 @@ export default function ProductsPage() {
       <section className="py-20">
         <Container className="grid gap-16 lg:grid-cols-2">
           <Reveal>
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src={images.warehouse}
-                alt="Warehouse and logistics for electrical materials"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+            <BrandedPhoto
+              src={images.warehouse}
+              alt="Warehouse and logistics for electrical materials"
+              overlay="soft"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </Reveal>
           <Reveal delay={100}>
             <SectionHeading

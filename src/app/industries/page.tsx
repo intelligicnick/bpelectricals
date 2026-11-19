@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { BrandedPhoto } from "@/components/media/BrandedPhoto";
 import { createPageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -59,6 +59,15 @@ export default function IndustriesPage() {
       />
 
       <section className="py-20">
+        <Container className="mb-12">
+          <BrandedPhoto
+            src={images.construction}
+            alt="Construction and infrastructure industries"
+            overlay="editorial"
+            aspectClassName="aspect-[21/9] max-h-[360px]"
+            sizes="100vw"
+          />
+        </Container>
         <Container>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {industries.map((ind, i) => (
@@ -87,15 +96,13 @@ export default function IndustriesPage() {
               Contact Us
             </Button>
           </div>
-          <div className="relative aspect-video overflow-hidden">
-            <Image
-              src={images.industrial}
-              alt="Industrial electrical environment"
-              fill
-              className="object-cover opacity-90"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          <BrandedPhoto
+            src={images.industrial}
+            alt="Industrial electrical environment"
+            overlay="editorial"
+            aspectClassName="aspect-video"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
         </Container>
       </section>
     </>

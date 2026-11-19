@@ -1,4 +1,5 @@
 import { createPageMetadata } from "@/lib/metadata";
+import { BrandedPhoto } from "@/components/media/BrandedPhoto";
 import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/sections/SectionHeading";
@@ -32,15 +33,13 @@ export default function SupplyProcurementPage() {
       />
 
       <section className="py-20">
-        <Container className="grid gap-14 lg:grid-cols-12">
-          <Reveal className="lg:col-span-5">
+        <Container className="grid items-center gap-12 lg:grid-cols-2">
+          <Reveal>
             <SectionHeading
               title="How we support procurement teams"
               description="We work alongside your purchase and project controls functions — especially where multiple sites or phases share common material lists."
             />
-          </Reveal>
-          <Reveal delay={100} className="lg:col-span-6 lg:col-start-7">
-            <ol className="space-y-6">
+            <ol className="mt-10 space-y-6">
               {pillars.map((pillar, i) => (
                 <li key={pillar} className="flex gap-4">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-bp-navy text-sm font-bold text-white">
@@ -51,17 +50,37 @@ export default function SupplyProcurementPage() {
               ))}
             </ol>
           </Reveal>
+          <Reveal delay={100}>
+            <BrandedPhoto
+              src={images.cables}
+              alt="Electrical materials and cable supply"
+              overlay="contrast"
+              aspectClassName="aspect-[4/5]"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </Reveal>
         </Container>
       </section>
 
       <section className="bg-bp-surface py-20">
-        <Container className="grid gap-12 lg:grid-cols-2">
-          <SectionHeading
-            eyebrow="Enquiry"
-            title="Procurement enquiry"
-            description="Attach RFQs, planned drawdown schedules, or vendor onboarding requirements."
+        <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <BrandedPhoto
+            src={images.warehouse}
+            alt="Warehouse logistics for electrical procurement"
+            overlay="soft"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          <EnquiryForm subject="Electrical supply & procurement enquiry" />
+          <div>
+            <SectionHeading
+              eyebrow="Enquiry"
+              title="Procurement enquiry"
+              description="Attach RFQs, planned drawdown schedules, or vendor onboarding requirements."
+            />
+            <EnquiryForm
+              subject="Electrical supply & procurement enquiry"
+              className="mt-8"
+            />
+          </div>
         </Container>
       </section>
     </>

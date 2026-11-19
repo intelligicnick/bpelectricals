@@ -1,17 +1,23 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { HeroBackground } from "@/components/media/HeroBackground";
 
 export function CtaBand({
   title,
   description,
+  image,
+  imageAlt = "Electrical infrastructure",
 }: {
   title?: string;
   description?: string;
+  image?: string;
+  imageAlt?: string;
 }) {
   return (
-    <section className="bg-bp-navy py-16 text-white lg:py-20">
-      <Container>
+    <section className="relative overflow-hidden bg-bp-navy py-16 text-white lg:py-24">
+      {image && <HeroBackground src={image} alt={imageAlt} />}
+      <Container className="relative z-10">
         <Reveal>
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-xl">
@@ -24,15 +30,9 @@ export function CtaBand({
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Button href="/contact" variant="primary">
-                Contact Us
-              </Button>
-              <Button
-                href="/products"
-                variant="outline"
-                className="border-white/30 !text-white hover:!bg-white/10"
-              >
-                View products
+              <Button href="/contact">Request a Quote</Button>
+              <Button href="/products" variant="inverse">
+                Explore Products
               </Button>
             </div>
           </div>

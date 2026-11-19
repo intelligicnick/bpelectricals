@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { BrandedPhoto } from "@/components/media/BrandedPhoto";
 import { createPageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -33,37 +33,41 @@ export default function IndustrialProductsPage() {
       />
 
       <section className="py-20">
-        <Container className="grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-5">
+        <Container className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
             <SectionHeading
               title="Industrial supply categories"
               description="We align makes and specifications to your approved vendor lists and plant standards during quotation."
             />
+            <ul className="mt-10 space-y-4">
+              {lines.map((line) => (
+                <li
+                  key={line}
+                  className="border-b border-bp-border pb-4 text-bp-charcoal last:border-0"
+                >
+                  {line}
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul className="space-y-4 lg:col-span-6 lg:col-start-7">
-            {lines.map((line) => (
-              <li
-                key={line}
-                className="border-b border-bp-border pb-4 text-bp-charcoal last:border-0"
-              >
-                {line}
-              </li>
-            ))}
-          </ul>
+          <BrandedPhoto
+            src={images.controlRoom}
+            alt="Industrial control and electrical systems"
+            overlay="contrast"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
         </Container>
       </section>
 
       <section className="bg-bp-surface py-20">
         <Container className="grid gap-12 lg:grid-cols-2">
-          <div className="relative aspect-square max-lg:max-h-80 overflow-hidden">
-            <Image
-              src={images.switchgear}
-              alt="Industrial electrical components"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          <BrandedPhoto
+            src={images.switchgear}
+            alt="Industrial electrical components"
+            overlay="contrast"
+            aspectClassName="aspect-square max-lg:max-h-80"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
           <div>
             <SectionHeading
               eyebrow="Enquiry"

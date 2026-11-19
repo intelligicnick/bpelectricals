@@ -1,4 +1,5 @@
 import { createPageMetadata } from "@/lib/metadata";
+import { BrandedPhoto } from "@/components/media/BrandedPhoto";
 import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/sections/SectionHeading";
@@ -44,6 +45,15 @@ export default function ElectricalContractingPage() {
       />
 
       <section className="py-20">
+        <Container className="mb-14">
+          <BrandedPhoto
+            src={images.substation}
+            alt="Electrical infrastructure contracting environment"
+            overlay="contrast"
+            aspectClassName="aspect-[21/9] max-h-[360px]"
+            sizes="100vw"
+          />
+        </Container>
         <Container>
           <SectionHeading
             title="Contracting capabilities"
@@ -63,6 +73,15 @@ export default function ElectricalContractingPage() {
       </section>
 
       <section className="border-t border-bp-border py-20">
+        <Container className="mb-14">
+          <BrandedPhoto
+            src={images.teamWork}
+            alt="On-site electrical contracting and installation"
+            overlay="editorial"
+            aspectClassName="aspect-[21/9] max-h-[400px]"
+            sizes="100vw"
+          />
+        </Container>
         <Container className="grid gap-12 lg:grid-cols-2">
           <SectionHeading
             eyebrow="Tender & scope"
@@ -76,6 +95,8 @@ export default function ElectricalContractingPage() {
       <CtaBand
         title="Combine contracting with material supply"
         description="Many clients engage us for both procurement and execution under aligned commercial structures."
+        image={images.construction}
+        imageAlt="Construction and electrical infrastructure"
       />
     </>
   );
